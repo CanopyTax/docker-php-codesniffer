@@ -12,6 +12,7 @@ RUN apt-get update -y && \
     wget https://squizlabs.github.io/PHP_CodeSniffer/phpcbf.phar && \
     chmod +x phpcbf.phar && \
     mv phpcbf.phar /usr/local/bin/phpcbf && \
+    phpcs --config-set default_standard PSR2 && \
     apt-get remove -y wget
 
 RUN mkdir -p /data/www
